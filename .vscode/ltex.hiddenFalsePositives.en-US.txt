@@ -1,0 +1,5 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QYou may also change the default init branch to something other than \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"NOUN_VERB_CONFUSION","sentence":"^\\QYou can also checkout an older commit.\\E$"}
+{"rule":"CAN_CHECKOUT","sentence":"^\\QNote the hash of whichever commit you want to checkout.\\E$"}
+{"rule":"NOUN_VERB_CONFUSION","sentence":"^\\QFirst checkout the newly created \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q branch.\\E$"}
+{"rule":"NOUN_VERB_CONFUSION","sentence":"^\\QIf you checkout \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q, then you won't see \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
