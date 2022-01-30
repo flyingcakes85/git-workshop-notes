@@ -1,0 +1,11 @@
+[book]
+authors = ["Snehit Sah"]
+description = "Handout notes for attendees during my workshops on Git"
+language = "en"
+multilingual = false
+src = "chapters"
+title = "Git Workshop Notes"
+
+[output.html]
+git-repository-url = "https://github.com/flyingcakes85/git-workshop-notes"
+edit-url-template = "https://github.com/flyingcakes85/git-workshop-notes/edit/main/{path}"
