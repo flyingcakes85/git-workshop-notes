@@ -8,7 +8,7 @@ Downloads are offered at git-scm website. Windows users should download installe
 
 [https://git-scm.com/downloads](https://git-scm.com/downloads)
 
-To check if git is woring, open a terminal, and run
+To check if git is working, open a terminal, and run
 
 ```sh
 git --version
@@ -74,7 +74,7 @@ echo "print('Hello World')" > test.py
 
 It creates a file `test.py` with the code `print('Hello World')`.
 
-Now, lets check if git notices this file or not. Run `git status` in the same folder, and you should get such an ouput.
+Now, lets check if git notices this file or not. Run `git status` in the same folder, and you should get such an output.
 
 ```sh
 [snehit@wired my-project]$ git status
@@ -104,7 +104,7 @@ git add test.py
 
 `git add` serves two purposes. If a file is untracked, then it will start tracking it and add to staging area. If a file is already being tracked, but has some changes, then git will simply just add the file to staging area.
 
-What is the staging area, you ask? Its the files whose change will be recorded and stored when you run git commit the next time.
+What is the staging area, you ask? It's the files whose change will be recorded and stored when you run git commit the next time.
 
 Before we move on to the next command, let's see the output of `git status` after running the above `git add` command.
 
@@ -127,13 +127,13 @@ If you have multiple files in a project, you can simply use the following comman
 git add -A
 ```
 
-Be careful while running this. It may possibly add any extra files you created in the repository which you actually don't want in commits.
+Be careful while running this. It may add any extra files you created in the repository which you actually don't want in commits.
 
 ## Committing changes
 
 Once you have files in the staging area, you `commit`. This is an important step. Note that commits are the mechanism by which git is able to preserve history. You can see commits as milestones, which anyone can check out.
 
-Commits are acompained by at least a title, and an optional message. Try to keep the message/title short, yet informative. For larger projects, it becomes necessary to have informative commit messages so that reviewers know what the commit does.
+Commits are accompanied by at least a title, and an optional message. Try to keep the message/title short, yet informative. For larger projects, it becomes necessary to have informative commit messages so that reviewers know what the commit does.
 
 Run this in the terminal
 
@@ -157,7 +157,7 @@ This should land you in a text editor, usually vi(m), where you add commit title
 #
 ```
 
-This is giving the output you saw with `git status` one more time, so that you can be sure that you are committing all the files you want. On the first line, give a commit title. Leave a blank line, and from the third line, you can write the description.
+The is giving the output you saw with `git status` one more time, so that you can be sure that you are committing all the files you want. On the first line, give a commit title. Leave a blank line, and from the third line, you can write the description.
 
 Here is an example. Note that I did not remove the lines that were already there. They are starting with a '#' and git will ignore them.
 
@@ -187,9 +187,9 @@ Save and close the file. Git should create a commit now, and print some message 
  create mode 100644 test.py
 ```
 
-Its called `root-commit` because its the first commit in this repo. There is a fancy alphanumeric string following it. `5de911e` - these are the first few characters of the commit hash. Commit hash is a 20 character alphanumeric SHA1 hash that is generated using data from past commit, changes in current commit, timestamp, author info etc. These hashes are git's primary mechanism to detect any changes to past code.
+It's called `root-commit` because it's the first commit in this repo. There is a fancy alphanumeric string following it. `5de911e` - these are the first few characters of the commit hash. Commit hash is a 20 character alphanumeric SHA1 hash that is generated using data from past commit, changes in current commit, timestamp, author info etc. These hashes are git's primary mechanism to detect any changes to past code.
 
-If you don't want to add a desription to your commit - maybe because the change is very minor and self explanatory - you can use the shorthand to just add a commit title.
+If you don't want to add a description to your commit - maybe because the change is very minor and self-explanatory - you can use the shorthand to just add a commit title.
 
 ```sh
 git commit -m "Fix typo in code"
@@ -197,7 +197,7 @@ git commit -m "Fix typo in code"
 
 ## Checking logs
 
-Since we have made a commit, its a permanent part of the repository now. You can see logs to verify the commit is there.
+Since we have made a commit, it's a permanent part of the repository now. You can see logs to verify the commit is there.
 
 ```sh
 [snehit@wired my-project]$ git log
@@ -228,7 +228,7 @@ Sometimes it happens that you forgot to add a file to staging before commit, or 
 git commit --amend
 ```
 
-If you look at the log, you will see the commit hash changes. This signifies that _some_ changes were made. Later on when you upload your code on the internet, these hashes will allow other collaborators ensure they have the same code as you. If you edit a past comment and upload it, then other collaborators will get to know about it. In general, its not a good idea to amend/edit commits if you have published them onto the web. Do this only if the commits to be edited are only on your local machine. One exception is that when you accidently commited and published sesnsitive info, like access keys, password etc.
+If you look at the log, you will see the commit hash changes. This signifies that _some_ changes were made. Later on when you upload your code on the internet, these hashes will allow other collaborators ensure they have the same code as you. If you edit a past comment and upload it, then other collaborators will get to know about it. In general, it's not a good idea to amend/edit commits if you have published them onto the web. Do this only if the commits to be edited are only on your local machine. One exception is that when you accidentally commit and publish sensitive info, like access keys, password etc.
 
 PS. In case you are wondering if other collaborators will match commit hash letter by letter to verify integrity - the answer is an obvious "no!". Git does that automatically.
 
@@ -268,7 +268,7 @@ git add test.py
 git commit -m "Update test.py and add new code"
 ```
 
-Ouptut of `git log`
+Output of `git log`
 
 ```sh
 [snehit@wired my-project]$ git log
@@ -290,13 +290,13 @@ Date:   Thu Sep 9 12:12:00 2021 +0530
 
 ## Using gitignore file
 
-You may have some files in your project directory which you don't want git to track. For example, upon testing C/C++ apps, you have a binary that shouldn't be there with the code. To prevent them from accidently being committed, you can add them to gitignore file. You'll first have to create a file named `.gitignore` in the root of your repo folder. Then you list the file paths that should not be tracked.
+You may have some files in your project directory which you don't want git to track. For example, upon testing C/C++ apps, you have a binary that shouldn't be there with the code. To prevent them from accidentally being committed, you can add them to gitignore file. You'll first have to create a file named `.gitignore` in the root of your repo folder. Then you list the file paths that should not be tracked.
 
 ```sh
 echo "*/a.out" >> .gitignore
 ```
 
-This will prevent git from tracking any file with name `a.out`. The aesterix at beginning is a wildcard that will select any path where `a.out` exists. To add folders, append a forward slash after path.
+This will prevent git from tracking any file with name `a.out`. The asterisk at beginning is a wildcard that will select any path where `a.out` exists. To add folders, append a forward slash after path.
 
 ```sh
 echo "build/" >> .gitignore
