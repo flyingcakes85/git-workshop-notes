@@ -1,0 +1,284 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Working with Remotes - Git Workshop Notes</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="favicon.svg">
+                        <link rel="shortcut icon" href="favicon.png">
+                <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+                <link rel="stylesheet" href="css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="chapter_0.html"><strong aria-hidden="true">1.</strong> About the book</a></li><li class="chapter-item expanded "><a href="chapter_1.html"><strong aria-hidden="true">2.</strong> Introduction to Git</a></li><li class="chapter-item expanded "><a href="chapter_2.html"><strong aria-hidden="true">3.</strong> Starting with Git</a></li><li class="chapter-item expanded "><a href="chapter_3.html" class="active"><strong aria-hidden="true">4.</strong> Working with Remotes</a></li><li class="chapter-item expanded "><a href="chapter_4.html"><strong aria-hidden="true">5.</strong> Working with Branches</a></li><li class="chapter-item expanded "><a href="chapter_5.html"><strong aria-hidden="true">6.</strong> Beyond the book</a></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">Git Workshop Notes</h1>
+
+                    <div class="right-buttons">
+                                                <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="working-with-remotes"><a class="header" href="#working-with-remotes">Working with remotes</a></h1>
+<p>Up until now, we have been working on our local system. Git however is built to facilitate collaboration of multiple developers. To let other developers work on our code, we need to publish this code to a website.</p>
+<p>Now, you can upload your code anywhere. Zip it up and put on cloud storage like Google Drive or Dropbox. Or send the files as an attachment to your friend. There are many ways, but they won't preserve the commit history and messages (unless you include the hidden <code>.git</code> folder). Moreover, it will be difficult to use collaboration features of git.</p>
+<p>It is much better to use a hosting service that is specially made for Git repositories. One of them is GitHub and thats the one which we will be using for this tutorial.</p>
+<p>Head over to their sign up page and create an account if not done already.
+<a href="https://github.com/join">https://github.com/join</a></p>
+<h2 id="connecting-a-remote-repository"><a class="header" href="#connecting-a-remote-repository">Connecting a remote repository</a></h2>
+<p>Create a new GitHub repository at <a href="https://github.com/new">https://github.com/new</a>. Give it a name. Description is optional. Make sure that all checkboxes under initialization are unchecked.</p>
+<p><img src="images/github-new-repo.png" alt="" title="GitHub New Repo" /></p>
+<p>Create the repository. On the page you are redirected to, you have an https link under <em>Quick setup</em>.</p>
+<p>Link is of the form <code>https://github.com/&lt;username&gt;/&lt;repo-name&gt;.git</code>. Copy this link.</p>
+<p>In your terminal, you will now tell git to use this remote link for publishing on the internet. You use the <code>git remote add</code> command to do this.</p>
+<pre><code class="language-sh">git remote add origin https://github.com/flyingcakes85/my-project.git
+</code></pre>
+<p>Here, <code>origin</code> specifies the remote name. You can give it any name. <code>origin</code> is a common name for the primary remote location. Make sure you use your repo link in the command.</p>
+<p>Before you push your branch, you first need an access token. Think of it as an alternate password to your account. For security reasons, using your actual password is not supported on GitHub. SSH is the easier way, but setting it up is out of the scope of this tutorial.</p>
+<p>Head over to this link : <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a>. Click on &quot;Generate new token&quot;. It may ask your password again.</p>
+<p>Add a note to identify the token later. Check the first box which says &quot;repo&quot;. It should automatically check the 5 boxes under it. Scroll down and click &quot;Generate token&quot;. You will be redirected back to the token page where you can see your newly created token. Copy it to a file and store it somewhere you can access. While pushing form the terminal, you will use this token instead of your password.</p>
+<p>Finally, you can push your branch to the remote.</p>
+<pre><code class="language-sh">git push -u origin main
+</code></pre>
+<p>It will ask your username and password. Enter your GitHub username only (not the complete link) and for password, use the token we just generated. Now on in this tutorial, I won't mention that you have to use this token, so keep it in mind.</p>
+<p><code>-u</code> is a shorthand for <code>--set-upstream</code>. It tells git that <code>origin</code> is the upstream for <code>main</code> i.e. the remote location where the <code>main</code> branch should be published. You might be wondering why we need to tell this? Git can work with multiple remotes, and often, different branches need to be published to different remotes. For any future push on this branch, you don't need to mention upstream, and simply running <code>git push</code> should do tho work for you.</p>
+<h2 id="pulling-remote-changes"><a class="header" href="#pulling-remote-changes">Pulling remote changes</a></h2>
+<p>Say someone else contributed to your repository. The changes they contributed will be stored on GitHub (or whichever remote you are using). You need to get the changes down on your machine. <code>git pull</code> is the command we use to get changes from remote to our local system.</p>
+<p>Since we may not be able to find a contributor right away, so let us make changes ourselves on the remote. GitHub web interface allows making changes to code without needing to have repository on your local system. Head over to the repository on your GitHub account.</p>
+<p>You will be able to see the files you added - <code>test.py</code> and <code>new_file.py</code>. Click on any of them, let's say <code>test.py</code>. You will see the code you wrote. On top right of the code, you can see a pencil icon that lets you make changes to file.</p>
+<p><img src="images/file-edit.png" alt="" title="file-edit" /></p>
+<p>Add a some code and click &quot;Commit changes&quot;.</p>
+<p><img src="images/commit-web.png" alt="" title="commit web" /></p>
+<p>Now, if you go to repository page, and click on the number of commits (see screengrab below), you can see 3 commits listed. We made 2 commits earlier. The third commit was made just now via GitHub web.</p>
+<p><img src="images/commit-history.png" alt="" title="commit web" /></p>
+<p>Go back to the terminal and run <code>git log --oneline</code>. You will still see only 2 commits here. This mean we need to pull remote commits on to our local machine. Run <code>git pull</code> to do the same. Here is the output in my case</p>
+<pre><code class="language-sh">[snehit@wired my-project]$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 709 bytes | 35.00 KiB/s, done.
+From https://github.com/flyingcakes85/my-project
+   9c804c0..7e8fc14  main       -&gt; origin/main
+Updating 9c804c0..7e8fc14
+Fast-forward
+ test.py | 2 ++
+ 1 file changed, 2 insertions(+)
+</code></pre>
+<p>You can see the text <code>test.py | 2 ++</code>. This mean that there were 2 additions made to this file. Deletions are followed by <code>--</code>. Now, if you run <code>git log --oneline</code> in terminal, you can see third commit too.</p>
+<pre><code class="language-sh">[snehit@wired my-project]$ git log --oneline
+7e8fc14 (HEAD -&gt; main, origin/main) Update test.py
+9c804c0 Update test.py and add new code
+5de911e Add test.py with basic code
+</code></pre>
+<h2 id="listing-remotes"><a class="header" href="#listing-remotes">Listing remotes</a></h2>
+<p>You can use <code>git remote</code> to list remote names configured for current repo, or pass the <code>-v</code> flag to also list remote links.</p>
+<pre><code class="language-sh">[snehit@wired my-project]$ git remote
+origin
+[snehit@wired my-project]$ git remote -v
+origin	https://github.com/flyingcakes85/my-project.git (fetch)
+origin	https://github.com/flyingcakes85/my-project.git (push)
+</code></pre>
+<h2 id="using-git-clone"><a class="header" href="#using-git-clone">Using git clone</a></h2>
+<p>So far we created a repository on the command line and connected it to a remote. Many times, we already have a git repo online which we want to use on our local machine. You can simply use the <code>git clone</code> command to download a repository. Note that you can download any public repository with this command even if you did not create it.</p>
+<pre><code class="language-sh">git clone https://github.com/flyingcakes85/my-project.git
+</code></pre>
+<p>Often, the repository you want to download is large, and downloading it can take some time. To get around this, you can use <code>--depth=N</code> flag to fetch only the past <code>N</code> commits. You will have all files from the repository, but you won't have complete commit history.</p>
+<h2 id="editing-pushlished-commits"><a class="header" href="#editing-pushlished-commits">Editing pushlished commits</a></h2>
+<p>Make some changes to a file an instead of a new commit, use <code>--amend</code> to edit the last commit.</p>
+<pre><code class="language-sh">echo &quot;print('More content')&quot; &gt;&gt; new_file.py
+git add new_file.py
+git commit --amend
+</code></pre>
+<p>Now, if you do a <code>git push</code>, you will get an error.</p>
+<pre><code class="language-sh">[snehit@wired my-project]$ git push
+Username for 'https://github.com': flyingcakes85
+Password for 'https://flyingcakes85@github.com':
+
+To https://github.com/flyingcakes85/my-project.git
+ ! [rejected]        main -&gt; main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/flyingcakes85/my-project.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+</code></pre>
+<p>There are two ways to get out of this situation - you either do a <code>git pull --rebase</code> to merge remote changes to your local copy first. Or you can do <code>git push -f</code> to force overwrite remote with your code.</p>
+<p>If you were to do the latter, you will be changing the history of project. Anyone who has a copy of the project and does <code>git pull</code> will get a similar error.</p>
+<p>The above error is a also common error when you made some change on your remote (via web interface) and then you made some commits on your local machine without pulling remote changes first. As I told, <code>git pull --rebase</code> should get you out of the fix in most cases.</p>
+<p>Keep in mind, editing published commits is not recommended, and you should do this only when necessary.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="chapter_2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="chapter_4.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="chapter_2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="chapter_4.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>
