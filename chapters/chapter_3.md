@@ -111,7 +111,7 @@ Often, the repository you want to download is large, and downloading it can take
 
 ## Editing pushlished commits
 
-Make some changes to a file an instead of a new commit, use `--amend` to edit the last commit.
+Make some changes to a file and instead of a new commit, use `--amend` to edit the last commit.
 
 ```sh
 echo "print('More content')" >> new_file.py
