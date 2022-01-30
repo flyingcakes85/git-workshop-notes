@@ -41,7 +41,7 @@ git push -u origin main
 
 It will ask your username and password. Enter your GitHub username only (not the complete link) and for password, use the token we just generated. Now on in this tutorial, I won't mention that you have to use this token, so keep it in mind.
 
-`-u` is a shorthand for `--set-upstream`. It tells git that `origin` is the upstream for `main` i.e. the remote location where the `main` branch should be published. You might be wondering why we need to tell this? Git can work with multiple remotes, and often, different branches need to be published to different remotes. For any future push on this branch, you don't need to mention upstream, and simply running `git push` should do tho work for you.
+`-u` is a shorthand for `--set-upstream`. It tells git that `origin` is the upstream for `main` i.e. the remote location where the `main` branch should be published. You might be wondering why we need to tell this? Git can work with multiple remotes, and often, different branches need to be published to different remotes. For any future push on this branch, you don't need to mention upstream, and simply running `git push` should do the work for you.
 
 ## Pulling remote changes
 
