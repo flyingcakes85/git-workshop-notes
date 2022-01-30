@@ -4,9 +4,9 @@ Up until now, we have been working on our local system. Git however is built to 
 
 Now, you can upload your code anywhere. Zip it up and put on cloud storage like Google Drive or Dropbox. Or send the files as an attachment to your friend. There are many ways, but they won't preserve the commit history and messages (unless you include the hidden `.git` folder). Moreover, it will be difficult to use collaboration features of git.
 
-It is much better to use a hosting service that is specially made for Git repositories. One of them is GitHub and thats the one which we will be using for this tutorial.
+It is much better to use a hosting service that is specially made for Git repositories. One of them is GitHub and that's the one which we will be using for this tutorial.
 
-Head over to their sign up page and create an account if not done already.
+Head over to their sign-up page and create an account if not done already.
 [https://github.com/join](https://github.com/join)
 
 ## Connecting a remote repository
@@ -15,7 +15,7 @@ Create a new GitHub repository at [https://github.com/new](https://github.com/ne
 
 ![](images/github-new-repo.png "GitHub New Repo")
 
-Create the repository. On the page you are redirected to, you have an https link under _Quick setup_.
+Create the repository. On the page you are redirected to, you have an HTTPS link under _Quick setup_.
 
 Link is of the form `https://github.com/<username>/<repo-name>.git`. Copy this link.
 
@@ -57,7 +57,7 @@ Add a some code and click "Commit changes".
 
 ![](images/commit-web.png "commit web")
 
-Now, if you go to repository page, and click on the number of commits (see screengrab below), you can see 3 commits listed. We made 2 commits earlier. The third commit was made just now via GitHub web.
+Now, if you go to repository page, and click on the number of commits (see screen-grab below), you can see 3 commits listed. We made 2 commits earlier. The third commit was made just now via GitHub web.
 
 ![](images/commit-history.png "commit web")
 
@@ -109,7 +109,7 @@ git clone https://github.com/flyingcakes85/my-project.git
 
 Often, the repository you want to download is large, and downloading it can take some time. To get around this, you can use `--depth=N` flag to fetch only the past `N` commits. You will have all files from the repository, but you won't have complete commit history.
 
-## Editing pushlished commits
+## Editing published commits
 
 Make some changes to a file and instead of a new commit, use `--amend` to edit the last commit.
 
@@ -139,6 +139,6 @@ There are two ways to get out of this situation - you either do a `git pull --re
 
 If you were to do the latter, you will be changing the history of project. Anyone who has a copy of the project and does `git pull` will get a similar error.
 
-The above error is a also common error when you made some change on your remote (via web interface) and then you made some commits on your local machine without pulling remote changes first. As I told, `git pull --rebase` should get you out of the fix in most cases.
+The above error is also a common error when you made some change on your remote (via web interface) and then you made some commits on your local machine without pulling remote changes first. As I told, `git pull --rebase` should get you out of the fix in most cases.
 
 Keep in mind, editing published commits is not recommended, and you should do this only when necessary.

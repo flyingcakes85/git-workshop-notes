@@ -1,6 +1,6 @@
 # Working with Branches
 
-Git provides the ability to create branches so as to let developers work on new features or bugfix without disturbing the main code. Changes you make to a branch are stored separately from the other branches. You can switch between branches anytime. When you think you have made enough changes to a branch and the changes are working, you can merge the branch into your `main` branch.
+Git provides the ability to create branches to let developers work on new features or bug fix without disturbing the main code. Changes you make to a branch are stored separately from the other branches. You can switch between branches anytime. When you think you have made enough changes to a branch and the changes are working, you can merge the branch into your `main` branch.
 
 ## Listing branches
 
@@ -14,7 +14,7 @@ Git provides the ability to create branches so as to let developers work on new 
   remotes/origin/main
 ```
 
-The branch marked with an aesterix denotes the currently active branch. Any changes or commits you make are added on the currently active branch.
+The branch marked with an asterisk denotes the currently active branch. Any changes or commits you make are added on the currently active branch.
 
 ## Creating and switching branches
 
@@ -60,7 +60,7 @@ You usually create a branch to work on bug or feature without disturbing the act
 
 There are usually three situations.
 
-### Fast forward merge
+### Fast-forward merge
 
 First checkout the newly created `add-emotes` branch.
 
@@ -68,7 +68,7 @@ First checkout the newly created `add-emotes` branch.
 git checkout add-emotes
 ```
 
-Lets make some changes now.
+Let's make some changes now.
 
 ```sh
 echo "print(':-)')" >> emotes.py
@@ -93,7 +93,7 @@ Notice the phrase `Fast-forward`. It signifies that no commits were made on main
 
 ### Recursive merge
 
-Lets do this process again, but we will make a commit on `main` before merging. Again, checkout `add-emotes` and make some changes.
+Let's do this process again, but we will make a commit on `main` before merging. Again, checkout `add-emotes` and make some changes.
 
 ```sh
 git checkout add-emotes
@@ -125,7 +125,7 @@ git add emotes.py
 git commit -S -m "Add more emotes"
 ```
 
-Now, lets switch back to `main` branch and try merging `add-emotes`.
+Now, let's switch back to `main` branch and try merging `add-emotes`.
 
 ```sh
 git checkout main
@@ -143,7 +143,7 @@ Merge branch 'add-emotes'
 # the commit.
 ```
 
-This is very much like making a commit. This time, there was already a commit made on to `main` before we merged the branch. So, git cannot simply fast forward. Save this file and exit. You should get this message.
+This is very much like making a commit. There was already a commit made on to `main` before we merged the branch. So, git cannot simply fast-forward. Save this file and exit. You should get this message.
 
 ```
 Merge made by the 'recursive' strategy.
@@ -176,7 +176,7 @@ First checkout `main` branch.
 git checkout main
 ```
 
-Lets now merge it and see what happens.
+Let's now merge it and see what happens.
 
 ```sh
 [snehit@wired my-project]$ git merge add-emotes
@@ -187,9 +187,9 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 Git bailed out saying it cannot merge - as we expected.
 
-When you get a merge conflict, you shouln't need to panic. Its not an "error". It only indicates that git is unable to decide which copy of the code to keep, because the two branches have different changes for the same file location.
+When you get a merge conflict, you shouldn't need to panic. It's not an "error". It only indicates that git is unable to decide which copy of the code to keep, because the two branches have different changes for the same file location.
 
-Git is telling us that there is a conflict in `test.py`. Lets open that file and see what's there.
+Git is telling us that there is a conflict in `test.py`. Let's open that file and see what's there.
 
 ```
 print('Hello World')
@@ -204,9 +204,9 @@ print('added via add-emotes')
 >>>>>>> add-emotes
 ```
 
-Here, you can see the conflicting part between angled brackets. From `<<<<<<< HEAD` to `=======` are the contents that are in `main`. From `=======` to `>>>>>>> add-emotes` are the contents that are in `add-emotes`. you can freely remove one of them, along with the angled brackets and equal signs. You may also just remove the brackets and equal signs in case you want to keep changes from both branches. Finally, you may remove it to add some other code altogether. Its all up to you.
+Here, you can see the conflicting part between angled brackets. From `<<<<<<< HEAD` to `=======` are the contents that are in `main`. From `=======` to `>>>>>>> add-emotes` are the contents that are in `add-emotes`. You can freely remove one of them, along with the angled brackets and equal signs. You may also just remove the brackets and equal signs in case you want to keep changes from both branches. Finally, you may remove it to add some other code altogether. It's all up to you.
 
-Lets say, I remove the code from `main`. So my file should now look like this.
+Let's say, I remove the code from `main`. So my file should now look like this.
 
 ```
 print('Hello World')
@@ -228,7 +228,7 @@ This will create the merge commit.
 
 ## Deleting branches
 
-You may want to delete a branch if you have merged it into `main` and it is no longer needed. Or maybe you decided against incorporating the changes from that branch. In these cases, you can delete the branch.
+You may want to delete a branch if you have merged it into `main`, and it is no longer needed. Or maybe you decided against incorporating the changes from that branch. In these cases, you can delete the branch.
 
 ```sh
 git branch -d <name>
@@ -240,4 +240,4 @@ If you had published a branch you now want to delete, run this command
 git push origin --delete <branch name>
 ```
 
-Run these commands with care, as you may accidently delete one of the important branches.
+Run these commands with care, as you may accidentally delete one of the important branches.

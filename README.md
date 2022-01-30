@@ -4,19 +4,20 @@ Handout notes for attendees during my workshops on Git.
 
 ## Background
 
-This book was originally a simple text file I wrote for myself when hosting sessions. I kept adding bits and pieces until it grew larger than what I'd personally call "speaker notes". I decided I should share these notes with the attendees. Using pandoc, I generated a pdf and shared it.
+This book was originally a simple text file I wrote for myself when hosting sessions. I kept adding bits and pieces until it grew larger than what I'd personally call "speaker notes". I decided I should share these notes with the attendees. Using pandoc, I generated a PDF and shared it.
 
-The book still remained closed source though. Very recently, I realised that a book about Git that I wrote, being closed source doesn't make sense. So I rearranged it, and published to GitHub under the MIT license. The repo contains everything you need to generate a pdf on your system.
+The book still remained closed source though. Very recently, I realised that a book about Git that I wrote, being closed source doesn't make sense. So I rearranged it, and published to GitHub under the MIT license. The repo contains everything you need to generate a PDF on your system.
 
 ## Building this book
 
-Install `pandoc`. Then run
+- Make sure you have `makecmds` installed via `cpan` or `tlmgr`
+- Install `pandoc`. Then run
 
 ```
 make pdf
 ```
 
-to generate pdf at `build/pdf/book.pdf`.
+To generate PDF at `build/pdf/book.pdf`.
 
 ## License
 

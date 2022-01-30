@@ -2,7 +2,7 @@
 
 ## General development workflow
 
-I'll briefly tell the workflow you follow when contributing to someone else's repo. You first fork the repository to your account. You clone your fork with `git clone <link>`. You will then create a new branch which shall hold the commits you make. You can also directly make commits on `main`, but this is almost **never** recommended.
+I'll briefly tell the workflow you follow when contributing to someone else's repo. You first fork the repository to your account. You clone your fork with `git clone <link>`. Likewise, you will then create a new branch which shall hold the commits you make. Furthermore, you can also directly make commits on `main`, but this is almost **never** recommended.
 
 You make some changes then commit it. When you think you have made all the changes you wanted, you push the branch to remote on your repo, using `git push -u origin <branch name>`. On GitHub, you finally create a pull request from your branch to the `main` or `dev` branch of original repo.
 
