@@ -23,7 +23,7 @@ There are two things that I believe are important for open source softwares, and
 
 I believe many Git workshops get the direction wrong. Their focus is on GitHub; and git is shown as a side utility. I call that the "easy way". Instructor will create a repository. They'll ask viewers to fork the repo, make some minor change via GitHub web interface, and create pull request. Such workshops end with a "grand message" that the viewer made their first PR. Its cool and all, but its severly lacking in some important concepts.
 
-I instead prefer bringing Git to the center stage. Git is very powerful, and knowing how to work with the command line utility is going to serve you quite far on your journey. GitHub has a cool self explanatory UI - do you really need to forum more over learning that as compared to a powerful command line utility?
+I instead prefer bringing Git to the center stage. Git is very powerful, and knowing how to work with the command line utility is going to serve you quite far on your journey. GitHub has a cool self explanatory UI - do you really need to focus more over learning that as compared to a powerful command line utility?
 
 Another minor complaint with having all focus on GitHub is that new students fail to appreciate the existence of other git repository hosting services. Truth is that once you learn Git, you can work with any hosting service.
 
