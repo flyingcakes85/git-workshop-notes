@@ -150,7 +150,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="working-with-branches"><a class="header" href="#working-with-branches">Working with Branches</a></h1>
-<p>Git provides the ability to create branches so as to let developers work on new features or bugfix without disturbing the main code. Changes you make to a branch are stored separately from the other branches. You can switch between branches anytime. When you think you have made enough changes to a branch and the changes are working, you can merge the branch into your <code>main</code> branch.</p>
+<p>Git provides the ability to create branches to let developers work on new features or bug fix without disturbing the main code. Changes you make to a branch are stored separately from the other branches. You can switch between branches anytime. When you think you have made enough changes to a branch and the changes are working, you can merge the branch into your <code>main</code> branch.</p>
 <h2 id="listing-branches"><a class="header" href="#listing-branches">Listing branches</a></h2>
 <p><code>git branch</code> will show you your local branches, and adding the <code>-a</code> flag will also list remote branches.</p>
 <pre><code class="language-sh">[snehit@wired my-project]$ git branch
@@ -159,7 +159,7 @@
 * main
   remotes/origin/main
 </code></pre>
-<p>The branch marked with an aesterix denotes the currently active branch. Any changes or commits you make are added on the currently active branch.</p>
+<p>The branch marked with an asterisk denotes the currently active branch. Any changes or commits you make are added on the currently active branch.</p>
 <h2 id="creating-and-switching-branches"><a class="header" href="#creating-and-switching-branches">Creating and switching branches</a></h2>
 <p><code>git branch &lt;name&gt;</code> creates a new branch. <code>git checkout &lt;name&gt;</code> will switch to the new branch so that further changes are make to the new branch.</p>
 <pre><code class="language-sh">git branch add-emotes
@@ -185,11 +185,11 @@ f15f7dc (HEAD -&gt; bugfix, origin/main, main, add-emotes) Update test.py
 <h2 id="working-on-branches---merging-and-stash"><a class="header" href="#working-on-branches---merging-and-stash">Working on branches - merging and stash</a></h2>
 <p>You usually create a branch to work on bug or feature without disturbing the actual code. The benefit here is that if there are any urgent changes required to the main code, you can make commits on main without needing to halt working on bug or feature.</p>
 <p>There are usually three situations.</p>
-<h3 id="fast-forward-merge"><a class="header" href="#fast-forward-merge">Fast forward merge</a></h3>
+<h3 id="fast-forward-merge"><a class="header" href="#fast-forward-merge">Fast-forward merge</a></h3>
 <p>First checkout the newly created <code>add-emotes</code> branch.</p>
 <pre><code class="language-sh">git checkout add-emotes
 </code></pre>
-<p>Lets make some changes now.</p>
+<p>Let's make some changes now.</p>
 <pre><code class="language-sh">echo &quot;print(':-)')&quot; &gt;&gt; emotes.py
 git add emotes.py
 git commit -m &quot;Add emotes&quot;
@@ -206,7 +206,7 @@ Fast-forward
 </code></pre>
 <p>Notice the phrase <code>Fast-forward</code>. It signifies that no commits were made on main from the time of creating branch <code>add-emotes</code> and the time when we merged it. Git could just &quot;fast-forward&quot; the <code>main</code> branch with commits from <code>add-emotes</code>. You ran use <code>git log --oneline</code> to verify that the commit was indeed applied on <code>main</code> branch too.</p>
 <h3 id="recursive-merge"><a class="header" href="#recursive-merge">Recursive merge</a></h3>
-<p>Lets do this process again, but we will make a commit on <code>main</code> before merging. Again, checkout <code>add-emotes</code> and make some changes.</p>
+<p>Let's do this process again, but we will make a commit on <code>main</code> before merging. Again, checkout <code>add-emotes</code> and make some changes.</p>
 <pre><code class="language-sh">git checkout add-emotes
 echo &quot;print(':/')&quot; &gt;&gt; emotes.py
 </code></pre>
@@ -226,7 +226,7 @@ echo &quot;print('B-)')&quot; &gt;&gt; emotes.py
 git add emotes.py
 git commit -S -m &quot;Add more emotes&quot;
 </code></pre>
-<p>Now, lets switch back to <code>main</code> branch and try merging <code>add-emotes</code>.</p>
+<p>Now, let's switch back to <code>main</code> branch and try merging <code>add-emotes</code>.</p>
 <pre><code class="language-sh">git checkout main
 git merge add-emotes
 </code></pre>
@@ -238,7 +238,7 @@ git merge add-emotes
 # Lines starting with '#' will be ignored, and an empty message aborts
 # the commit.
 </code></pre>
-<p>This is very much like making a commit. This time, there was already a commit made on to <code>main</code> before we merged the branch. So, git cannot simply fast forward. Save this file and exit. You should get this message.</p>
+<p>This is very much like making a commit. There was already a commit made on to <code>main</code> before we merged the branch. So, git cannot simply fast-forward. Save this file and exit. You should get this message.</p>
 <pre><code>Merge made by the 'recursive' strategy.
  emotes.py | 2 ++
  1 file changed, 2 insertions(+)
@@ -259,15 +259,15 @@ git commit -m &quot;Make program fancy&quot;
 <p>First checkout <code>main</code> branch.</p>
 <pre><code class="language-sh">git checkout main
 </code></pre>
-<p>Lets now merge it and see what happens.</p>
+<p>Let's now merge it and see what happens.</p>
 <pre><code class="language-sh">[snehit@wired my-project]$ git merge add-emotes
 Auto-merging test.py
 CONFLICT (content): Merge conflict in test.py
 Automatic merge failed; fix conflicts and then commit the result.
 </code></pre>
 <p>Git bailed out saying it cannot merge - as we expected.</p>
-<p>When you get a merge conflict, you shouln't need to panic. Its not an &quot;error&quot;. It only indicates that git is unable to decide which copy of the code to keep, because the two branches have different changes for the same file location.</p>
-<p>Git is telling us that there is a conflict in <code>test.py</code>. Lets open that file and see what's there.</p>
+<p>When you get a merge conflict, you shouldn't need to panic. It's not an &quot;error&quot;. It only indicates that git is unable to decide which copy of the code to keep, because the two branches have different changes for the same file location.</p>
+<p>Git is telling us that there is a conflict in <code>test.py</code>. Let's open that file and see what's there.</p>
 <pre><code>print('Hello World')
 print('Another line')
 
@@ -279,8 +279,8 @@ print('added via main')
 print('added via add-emotes')
 &gt;&gt;&gt;&gt;&gt;&gt;&gt; add-emotes
 </code></pre>
-<p>Here, you can see the conflicting part between angled brackets. From <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> to <code>=======</code> are the contents that are in <code>main</code>. From <code>=======</code> to <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; add-emotes</code> are the contents that are in <code>add-emotes</code>. you can freely remove one of them, along with the angled brackets and equal signs. You may also just remove the brackets and equal signs in case you want to keep changes from both branches. Finally, you may remove it to add some other code altogether. Its all up to you.</p>
-<p>Lets say, I remove the code from <code>main</code>. So my file should now look like this.</p>
+<p>Here, you can see the conflicting part between angled brackets. From <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> to <code>=======</code> are the contents that are in <code>main</code>. From <code>=======</code> to <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; add-emotes</code> are the contents that are in <code>add-emotes</code>. You can freely remove one of them, along with the angled brackets and equal signs. You may also just remove the brackets and equal signs in case you want to keep changes from both branches. Finally, you may remove it to add some other code altogether. It's all up to you.</p>
+<p>Let's say, I remove the code from <code>main</code>. So my file should now look like this.</p>
 <pre><code>print('Hello World')
 print('Another line')
 
@@ -294,13 +294,13 @@ git commit -m &quot;Merge add-emotes into main&quot;
 </code></pre>
 <p>This will create the merge commit.</p>
 <h2 id="deleting-branches"><a class="header" href="#deleting-branches">Deleting branches</a></h2>
-<p>You may want to delete a branch if you have merged it into <code>main</code> and it is no longer needed. Or maybe you decided against incorporating the changes from that branch. In these cases, you can delete the branch.</p>
+<p>You may want to delete a branch if you have merged it into <code>main</code>, and it is no longer needed. Or maybe you decided against incorporating the changes from that branch. In these cases, you can delete the branch.</p>
 <pre><code class="language-sh">git branch -d &lt;name&gt;
 </code></pre>
 <p>If you had published a branch you now want to delete, run this command</p>
 <pre><code class="language-sh">git push origin --delete &lt;branch name&gt;
 </code></pre>
-<p>Run these commands with care, as you may accidently delete one of the important branches.</p>
+<p>Run these commands with care, as you may accidentally delete one of the important branches.</p>
 
                     </main>
 

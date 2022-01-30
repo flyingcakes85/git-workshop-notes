@@ -152,13 +152,13 @@
                         <h1 id="working-with-remotes"><a class="header" href="#working-with-remotes">Working with remotes</a></h1>
 <p>Up until now, we have been working on our local system. Git however is built to facilitate collaboration of multiple developers. To let other developers work on our code, we need to publish this code to a website.</p>
 <p>Now, you can upload your code anywhere. Zip it up and put on cloud storage like Google Drive or Dropbox. Or send the files as an attachment to your friend. There are many ways, but they won't preserve the commit history and messages (unless you include the hidden <code>.git</code> folder). Moreover, it will be difficult to use collaboration features of git.</p>
-<p>It is much better to use a hosting service that is specially made for Git repositories. One of them is GitHub and thats the one which we will be using for this tutorial.</p>
-<p>Head over to their sign up page and create an account if not done already.
+<p>It is much better to use a hosting service that is specially made for Git repositories. One of them is GitHub and that's the one which we will be using for this tutorial.</p>
+<p>Head over to their sign-up page and create an account if not done already.
 <a href="https://github.com/join">https://github.com/join</a></p>
 <h2 id="connecting-a-remote-repository"><a class="header" href="#connecting-a-remote-repository">Connecting a remote repository</a></h2>
 <p>Create a new GitHub repository at <a href="https://github.com/new">https://github.com/new</a>. Give it a name. Description is optional. Make sure that all checkboxes under initialization are unchecked.</p>
 <p><img src="images/github-new-repo.png" alt="" title="GitHub New Repo" /></p>
-<p>Create the repository. On the page you are redirected to, you have an https link under <em>Quick setup</em>.</p>
+<p>Create the repository. On the page you are redirected to, you have an HTTPS link under <em>Quick setup</em>.</p>
 <p>Link is of the form <code>https://github.com/&lt;username&gt;/&lt;repo-name&gt;.git</code>. Copy this link.</p>
 <p>In your terminal, you will now tell git to use this remote link for publishing on the internet. You use the <code>git remote add</code> command to do this.</p>
 <pre><code class="language-sh">git remote add origin https://github.com/flyingcakes85/my-project.git
@@ -179,7 +179,7 @@
 <p><img src="images/file-edit.png" alt="" title="file-edit" /></p>
 <p>Add a some code and click &quot;Commit changes&quot;.</p>
 <p><img src="images/commit-web.png" alt="" title="commit web" /></p>
-<p>Now, if you go to repository page, and click on the number of commits (see screengrab below), you can see 3 commits listed. We made 2 commits earlier. The third commit was made just now via GitHub web.</p>
+<p>Now, if you go to repository page, and click on the number of commits (see screen-grab below), you can see 3 commits listed. We made 2 commits earlier. The third commit was made just now via GitHub web.</p>
 <p><img src="images/commit-history.png" alt="" title="commit web" /></p>
 <p>Go back to the terminal and run <code>git log --oneline</code>. You will still see only 2 commits here. This mean we need to pull remote commits on to our local machine. Run <code>git pull</code> to do the same. Here is the output in my case</p>
 <pre><code class="language-sh">[snehit@wired my-project]$ git pull
@@ -214,7 +214,7 @@ origin	https://github.com/flyingcakes85/my-project.git (push)
 <pre><code class="language-sh">git clone https://github.com/flyingcakes85/my-project.git
 </code></pre>
 <p>Often, the repository you want to download is large, and downloading it can take some time. To get around this, you can use <code>--depth=N</code> flag to fetch only the past <code>N</code> commits. You will have all files from the repository, but you won't have complete commit history.</p>
-<h2 id="editing-pushlished-commits"><a class="header" href="#editing-pushlished-commits">Editing pushlished commits</a></h2>
+<h2 id="editing-published-commits"><a class="header" href="#editing-published-commits">Editing published commits</a></h2>
 <p>Make some changes to a file and instead of a new commit, use <code>--amend</code> to edit the last commit.</p>
 <pre><code class="language-sh">echo &quot;print('More content')&quot; &gt;&gt; new_file.py
 git add new_file.py
@@ -235,7 +235,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 </code></pre>
 <p>There are two ways to get out of this situation - you either do a <code>git pull --rebase</code> to merge remote changes to your local copy first. Or you can do <code>git push -f</code> to force overwrite remote with your code.</p>
 <p>If you were to do the latter, you will be changing the history of project. Anyone who has a copy of the project and does <code>git pull</code> will get a similar error.</p>
-<p>The above error is a also common error when you made some change on your remote (via web interface) and then you made some commits on your local machine without pulling remote changes first. As I told, <code>git pull --rebase</code> should get you out of the fix in most cases.</p>
+<p>The above error is also a common error when you made some change on your remote (via web interface) and then you made some commits on your local machine without pulling remote changes first. As I told, <code>git pull --rebase</code> should get you out of the fix in most cases.</p>
 <p>Keep in mind, editing published commits is not recommended, and you should do this only when necessary.</p>
 
                     </main>

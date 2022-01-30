@@ -152,36 +152,36 @@
 <p><img src="images/by-sa.png" alt="" /></p>
 <p><strong>Git Workshop Notes © 2021 by <a href="https://github.com/flyingcakes85">Snehit Sah</a> is licensed under Attribution-ShareAlike 4.0 International. To view a copy of this license, visit <a href="http://creativecommons.org/licenses/by-sa/4.0/">http://creativecommons.org/licenses/by-sa/4.0/</a></strong></p>
 <p>This book is open source at <a href="https://github.com/flyingcakes85/git-workshop-notes">flyingcakes/git-workshop-notes</a>. Head to the repo for suggesting corrections or improvements. Alternatively, you can also mail me at <a href="hi@snehit.dev">hi@snehit.dev</a>.</p>
-<p>This book was originally a simple text file I wrote for myself when hosting sessions. I kept adding bits and pieces until it grew larger than what I'd personally call &quot;speaker notes&quot;. I decided I should share these notes with the attendees. Using pandoc, I generated a pdf and shared it.</p>
-<p>The book still remained closed source though. Very recently, I realised that a book about Git that I wrote, being closed source doesn't make sense. So I rearranged it, and published to GitHub under the MIT license. The repo contains everything you need to generate a pdf on your system.</p>
+<p>This book was originally a simple text file I wrote for myself when hosting sessions. I kept adding bits and pieces until it grew larger than what I'd personally call &quot;speaker notes&quot;. I decided I should share these notes with the attendees. Using Pandoc, I generated a PDF and shared it.</p>
+<p>The book still remained closed source though. Very recently, I realised that a book about Git that I wrote, being closed source doesn't make sense. So I rearranged it, and published to GitHub under the MIT license. The repo contains everything you need to generate a PDF on your system.</p>
 <h2 id="pdf-download"><a class="header" href="#pdf-download">PDF Download</a></h2>
 <p>The latest version of the book is available at <a href="https://files.snehit.dev/Git_Workshop_Notes.pdf">files.snehit.dev/Git_Workshop_Notes.pdf</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="introduction-to-git"><a class="header" href="#introduction-to-git">Introduction to Git</a></h1>
 <h2 id="basics"><a class="header" href="#basics">Basics</a></h2>
 <p>Git is an open source distributed version control system.</p>
-<p>VCS (version control system) refers to a system which can keep track of all the code that is added to a project. Often, you want the history of the project to be preserved for various reasons. Say, the latest version of your software has major bugs, and as a result, you want to rollback some changes to an earlier date. This will only be possible if your code base is version controlled.</p>
+<p>VCS (version control system) refers to a system which can keep track of all the code that is added to a project. Often, you want the history of the project to be preserved for various reasons. Say, the latest version of your software has major bugs, and as a result, you want to roll back some changes to an earlier date. This will only be possible if your code base is version controlled.</p>
 <p>Git is also called <em>distributed</em> because the code base isn't stored on one server. Instead, each of the developers working on the project can have their own copies of the project. They can make changes independently on their machines, and then request for their changes to be merged back into the original software.</p>
 <h2 id="why-git"><a class="header" href="#why-git">Why Git?</a></h2>
-<p>Git is one of the topics covered in MIT's Missing Semester. This course covers multiple useful topics that are oftenly not formally taught, but they can be very useful to students.</p>
-<p>Git is a vast and powerful software, but <strong>you don't need to be an expert at Git.</strong> You just need to know enought commands to maintain your repository and contribute to other repositories. Rest of the stuff, you can learn as you go.</p>
-<p>There are two things that I believe are important for open source softwares, and Git helps you realize them.</p>
+<p>Git is one of the topics covered in MIT's Missing Semester. This course covers multiple useful topics that are often not formally taught, but they can be very useful to students.</p>
+<p>Git is a vast and powerful software, but <strong>you don't need to be an expert at Git.</strong> You just need to know enough commands to maintain your repository and contribute to other repositories. Rest of the stuff, you can learn as you go.</p>
+<p>There are two things that I believe are important for open source software programs, and Git helps you realize them.</p>
 <ol>
-<li>Integrity of history : The project history is an important data that lets users trust the software. Anyone can see how the softawre developed or when the different components were added. It also lets people track new changes, so that external contributors can focus more on testing new code and also restrict themselves to auditing new code.</li>
+<li>Integrity of history : The project history is an important data that lets users trust the software. Anyone can see how the software developed or when the different components were added. It also lets people track new changes, so that external contributors can focus more on testing new code and also restrict themselves to auditing new code.</li>
 <li>Long term maintainability : With git, you can associate commits with a descriptive commit message. This lets future maintainers know more about the code. Commits also carry author email - which can be useful in case a maintainer needs to contact a past maintainer to discuss some legacy code.</li>
 </ol>
 <h2 id="my-approach-to-git"><a class="header" href="#my-approach-to-git">My approach to Git</a></h2>
-<p>I believe many Git workshops get the direction wrong. Their focus is on GitHub; and git is shown as a side utility. I call that the &quot;easy way&quot;. Instructor will create a repository. They'll ask viewers to fork the repo, make some minor change via GitHub web interface, and create pull request. Such workshops end with a &quot;grand message&quot; that the viewer made their first PR. Its cool and all, but its severly lacking in some important concepts.</p>
-<p>I instead prefer bringing Git to the center stage. Git is very powerful, and knowing how to work with the command line utility is going to serve you quite far on your journey. GitHub has a cool self explanatory UI - do you really need to focus more over learning that as compared to a powerful command line utility?</p>
+<p>I believe many Git workshops get the direction wrong. Their focus is on GitHub; and git is shown as a side utility. I call that the &quot;easy way&quot;. Instructor will create a repository. They'll ask viewers to fork the repo, make some minor change via GitHub web interface, and create pull request. Such workshops end with a &quot;grand message&quot; that the viewer made their first PR. Its cool and all, but it's severely lacking in some important concepts.</p>
+<p>I instead prefer bringing Git to the center stage. Git is very powerful, and knowing how to work with the command line utility is going to serve you quite far on your journey. GitHub has a cool self-explanatory UI - do you really need to focus more over learning that as compared to a powerful command line utility?</p>
 <p>Another minor complaint with having all focus on GitHub is that new students fail to appreciate the existence of other git repository hosting services. Truth is that once you learn Git, you can work with any hosting service.</p>
 <h2 id="a-note-about-git-gui-programs"><a class="header" href="#a-note-about-git-gui-programs">A note about Git GUI programs</a></h2>
-<p>I'm not against GUI programs altogether. Once in a blue moon, even I fall back to using GUI. Hovever, while learning its better to use command line client only. That way you know what is happening and it stregthens your understanding.</p>
+<p>I'm not against GUI programs altogether. Once in a blue moon, even I fall back to using GUI. However, while learning it's better to use command line client only. That way you know what is happening, and it strengthens your understanding.</p>
 <p>PS. Recorded lectures from The Missing Semester are free to view. You can check out their website here : <a href="https://missing.csail.mit.edu/">https://missing.csail.mit.edu/</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="starting-with-git"><a class="header" href="#starting-with-git">Starting with Git</a></h1>
 <p>We already know that Git tracks your project. So, every time you change a file and commit it to the project (basically asking Git to mark a milestone you can return to later, if needed), Git is recording the <strong>changes</strong> you made to each file. Note that complete files are not duplicated. Only the changes you made to each file are stored by Git. It is intelligent enough to create the complete file by knowing the changes you made all through.</p>
 <h2 id="installing"><a class="header" href="#installing">Installing</a></h2>
 <p>Downloads are offered at git-scm website. Windows users should download installer from the website. Users on *nix systems can use their package manager for the same.</p>
 <p><a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
-<p>To check if git is woring, open a terminal, and run</p>
+<p>To check if git is working, open a terminal, and run</p>
 <pre><code class="language-sh">git --version
 </code></pre>
 <p>This should output the version name. An example output, on my system:</p>
@@ -217,7 +217,7 @@ git init
 <pre><code class="language-sh">echo &quot;print('Hello World')&quot; &gt; test.py
 </code></pre>
 <p>It creates a file <code>test.py</code> with the code <code>print('Hello World')</code>.</p>
-<p>Now, lets check if git notices this file or not. Run <code>git status</code> in the same folder, and you should get such an ouput.</p>
+<p>Now, lets check if git notices this file or not. Run <code>git status</code> in the same folder, and you should get such an output.</p>
 <pre><code class="language-sh">[snehit@wired my-project]$ git status
 On branch main
 
@@ -237,7 +237,7 @@ nothing added to commit but untracked files present
 <pre><code class="language-sh">git add test.py
 </code></pre>
 <p><code>git add</code> serves two purposes. If a file is untracked, then it will start tracking it and add to staging area. If a file is already being tracked, but has some changes, then git will simply just add the file to staging area.</p>
-<p>What is the staging area, you ask? Its the files whose change will be recorded and stored when you run git commit the next time.</p>
+<p>What is the staging area, you ask? It's the files whose change will be recorded and stored when you run git commit the next time.</p>
 <p>Before we move on to the next command, let's see the output of <code>git status</code> after running the above <code>git add</code> command.</p>
 <pre><code class="language-sh">[snehit@wired my-project]$ git status
 On branch main
@@ -252,10 +252,10 @@ Changes to be committed:
 <p>If you have multiple files in a project, you can simply use the following command to add all changed and untracked files.</p>
 <pre><code class="language-sh">git add -A
 </code></pre>
-<p>Be careful while running this. It may possibly add any extra files you created in the repository which you actually don't want in commits.</p>
+<p>Be careful while running this. It may add any extra files you created in the repository which you actually don't want in commits.</p>
 <h2 id="committing-changes"><a class="header" href="#committing-changes">Committing changes</a></h2>
 <p>Once you have files in the staging area, you <code>commit</code>. This is an important step. Note that commits are the mechanism by which git is able to preserve history. You can see commits as milestones, which anyone can check out.</p>
-<p>Commits are acompained by at least a title, and an optional message. Try to keep the message/title short, yet informative. For larger projects, it becomes necessary to have informative commit messages so that reviewers know what the commit does.</p>
+<p>Commits are accompanied by at least a title, and an optional message. Try to keep the message/title short, yet informative. For larger projects, it becomes necessary to have informative commit messages so that reviewers know what the commit does.</p>
 <p>Run this in the terminal</p>
 <pre><code class="language-sh">git commit
 </code></pre>
@@ -272,7 +272,7 @@ Changes to be committed:
 #	new file:   test.py
 #
 </code></pre>
-<p>This is giving the output you saw with <code>git status</code> one more time, so that you can be sure that you are committing all the files you want. On the first line, give a commit title. Leave a blank line, and from the third line, you can write the description.</p>
+<p>You get the output you saw with <code>git status</code> one more time, so that you can be sure that you are committing all the files you want. On the first line, give a commit title. Leave a blank line, and from the third line, you can write the description.</p>
 <p>Here is an example. Note that I did not remove the lines that were already there. They are starting with a '#' and git will ignore them.</p>
 <pre><code>Add test.py with basic code
 
@@ -295,12 +295,12 @@ Hello World. Tested with Python3.7
  1 file changed, 1 insertion(+)
  create mode 100644 test.py
 </code></pre>
-<p>Its called <code>root-commit</code> because its the first commit in this repo. There is a fancy alphanumeric string following it. <code>5de911e</code> - these are the first few characters of the commit hash. Commit hash is a 20 character alphanumeric SHA1 hash that is generated using data from past commit, changes in current commit, timestamp, author info etc. These hashes are git's primary mechanism to detect any changes to past code.</p>
-<p>If you don't want to add a desription to your commit - maybe because the change is very minor and self explanatory - you can use the shorthand to just add a commit title.</p>
+<p>It's called <code>root-commit</code> because it's the first commit in this repo. There is a fancy alphanumeric string following it. <code>5de911e</code> - these are the first few characters of the commit hash. Commit hash is a 20 character alphanumeric SHA1 hash that is generated using data from past commit, changes in current commit, timestamp, author info etc. These hashes are git's primary mechanism to detect any changes to past code.</p>
+<p>If you don't want to add a description to your commit - maybe because the change is very minor and self-explanatory - you can use the shorthand to just add a commit title.</p>
 <pre><code class="language-sh">git commit -m &quot;Fix typo in code&quot;
 </code></pre>
 <h2 id="checking-logs"><a class="header" href="#checking-logs">Checking logs</a></h2>
-<p>Since we have made a commit, its a permanent part of the repository now. You can see logs to verify the commit is there.</p>
+<p>Since we have made a commit, it's a permanent part of the repository now. You can see logs to verify the commit is there.</p>
 <pre><code class="language-sh">[snehit@wired my-project]$ git log
 commit 5de911e18db087d3c3a57031dab49637e316608f (HEAD -&gt; main)
 Author: Snehit Sah &lt;snehitsah@protonmail.com&gt;
@@ -320,7 +320,7 @@ Date:   Thu Sep 9 12:12:00 2021 +0530
 <p>Sometimes it happens that you forgot to add a file to staging before commit, or there's a tiny change you need to make, which should have been a part of the last commit. In such situations, git provides an easy way to amend last commit. Assuming you made a commit, do some edits to code. Then do <code>git add</code> as usual. While committing, include the <code>--amend</code> flag to instruct git to update the last commit instead of creating a new one.</p>
 <pre><code class="language-sh">git commit --amend
 </code></pre>
-<p>If you look at the log, you will see the commit hash changes. This signifies that <em>some</em> changes were made. Later on when you upload your code on the internet, these hashes will allow other collaborators ensure they have the same code as you. If you edit a past comment and upload it, then other collaborators will get to know about it. In general, its not a good idea to amend/edit commits if you have published them onto the web. Do this only if the commits to be edited are only on your local machine. One exception is that when you accidently commited and published sesnsitive info, like access keys, password etc.</p>
+<p>If you look at the log, you will see the commit hash changes. This signifies that <em>some</em> changes were made. Later on when you upload your code on the internet, these hashes will allow other collaborators ensure they have the same code as you. If you edit a past comment and upload it, then other collaborators will get to know about it. In general, it's not a good idea to amend/edit commits if you have published them onto the web. Do this only if the commits to be edited are only on your local machine. One exception is that when you accidentally commit and publish sensitive info, like access keys, password etc.</p>
 <p>PS. In case you are wondering if other collaborators will match commit hash letter by letter to verify integrity - the answer is an obvious &quot;no!&quot;. Git does that automatically.</p>
 <h2 id="recap"><a class="header" href="#recap">Recap</a></h2>
 <p>Try creating another file, and make some changes to <code>test.py</code>. Check status. Add both files to staging, and then make a commit. Check log to verify the commit was made.</p>
@@ -347,7 +347,7 @@ no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&q
 git add test.py
 git commit -m &quot;Update test.py and add new code&quot;
 </code></pre>
-<p>Ouptut of <code>git log</code></p>
+<p>Output of <code>git log</code></p>
 <pre><code class="language-sh">[snehit@wired my-project]$ git log
 commit 9c804c05610ca86f720abda62b297e9d2e6a725f (HEAD -&gt; main)
 Author: Snehit Sah &lt;snehitsah@protonmail.com&gt;
@@ -365,22 +365,22 @@ Date:   Thu Sep 9 12:12:00 2021 +0530
     Hello World. Tested with Python3.7
 </code></pre>
 <h2 id="using-gitignore-file"><a class="header" href="#using-gitignore-file">Using gitignore file</a></h2>
-<p>You may have some files in your project directory which you don't want git to track. For example, upon testing C/C++ apps, you have a binary that shouldn't be there with the code. To prevent them from accidently being committed, you can add them to gitignore file. You'll first have to create a file named <code>.gitignore</code> in the root of your repo folder. Then you list the file paths that should not be tracked.</p>
+<p>You may have some files in your project directory which you don't want git to track. For example, upon testing C/C++ apps, you have a binary that shouldn't be there with the code. To prevent them from accidentally being committed, you can add them to gitignore file. You'll first have to create a file named <code>.gitignore</code> in the root of your repo folder. Then you list the file paths that should not be tracked.</p>
 <pre><code class="language-sh">echo &quot;*/a.out&quot; &gt;&gt; .gitignore
 </code></pre>
-<p>This will prevent git from tracking any file with name <code>a.out</code>. The aesterix at beginning is a wildcard that will select any path where <code>a.out</code> exists. To add folders, append a forward slash after path.</p>
+<p>This will prevent git from tracking any file with name <code>a.out</code>. The asterisk at beginning is a wildcard that will select any path where <code>a.out</code> exists. To add folders, append a forward slash after path.</p>
 <pre><code class="language-sh">echo &quot;build/&quot; &gt;&gt; .gitignore
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="working-with-remotes"><a class="header" href="#working-with-remotes">Working with remotes</a></h1>
 <p>Up until now, we have been working on our local system. Git however is built to facilitate collaboration of multiple developers. To let other developers work on our code, we need to publish this code to a website.</p>
 <p>Now, you can upload your code anywhere. Zip it up and put on cloud storage like Google Drive or Dropbox. Or send the files as an attachment to your friend. There are many ways, but they won't preserve the commit history and messages (unless you include the hidden <code>.git</code> folder). Moreover, it will be difficult to use collaboration features of git.</p>
-<p>It is much better to use a hosting service that is specially made for Git repositories. One of them is GitHub and thats the one which we will be using for this tutorial.</p>
-<p>Head over to their sign up page and create an account if not done already.
+<p>It is much better to use a hosting service that is specially made for Git repositories. One of them is GitHub and that's the one which we will be using for this tutorial.</p>
+<p>Head over to their sign-up page and create an account if not done already.
 <a href="https://github.com/join">https://github.com/join</a></p>
 <h2 id="connecting-a-remote-repository"><a class="header" href="#connecting-a-remote-repository">Connecting a remote repository</a></h2>
 <p>Create a new GitHub repository at <a href="https://github.com/new">https://github.com/new</a>. Give it a name. Description is optional. Make sure that all checkboxes under initialization are unchecked.</p>
 <p><img src="images/github-new-repo.png" alt="" title="GitHub New Repo" /></p>
-<p>Create the repository. On the page you are redirected to, you have an https link under <em>Quick setup</em>.</p>
+<p>Create the repository. On the page you are redirected to, you have an HTTPS link under <em>Quick setup</em>.</p>
 <p>Link is of the form <code>https://github.com/&lt;username&gt;/&lt;repo-name&gt;.git</code>. Copy this link.</p>
 <p>In your terminal, you will now tell git to use this remote link for publishing on the internet. You use the <code>git remote add</code> command to do this.</p>
 <pre><code class="language-sh">git remote add origin https://github.com/flyingcakes85/my-project.git
@@ -401,7 +401,7 @@ Date:   Thu Sep 9 12:12:00 2021 +0530
 <p><img src="images/file-edit.png" alt="" title="file-edit" /></p>
 <p>Add a some code and click &quot;Commit changes&quot;.</p>
 <p><img src="images/commit-web.png" alt="" title="commit web" /></p>
-<p>Now, if you go to repository page, and click on the number of commits (see screengrab below), you can see 3 commits listed. We made 2 commits earlier. The third commit was made just now via GitHub web.</p>
+<p>Now, if you go to repository page, and click on the number of commits (see screen-grab below), you can see 3 commits listed. We made 2 commits earlier. The third commit was made just now via GitHub web.</p>
 <p><img src="images/commit-history.png" alt="" title="commit web" /></p>
 <p>Go back to the terminal and run <code>git log --oneline</code>. You will still see only 2 commits here. This mean we need to pull remote commits on to our local machine. Run <code>git pull</code> to do the same. Here is the output in my case</p>
 <pre><code class="language-sh">[snehit@wired my-project]$ git pull
@@ -436,7 +436,7 @@ origin	https://github.com/flyingcakes85/my-project.git (push)
 <pre><code class="language-sh">git clone https://github.com/flyingcakes85/my-project.git
 </code></pre>
 <p>Often, the repository you want to download is large, and downloading it can take some time. To get around this, you can use <code>--depth=N</code> flag to fetch only the past <code>N</code> commits. You will have all files from the repository, but you won't have complete commit history.</p>
-<h2 id="editing-pushlished-commits"><a class="header" href="#editing-pushlished-commits">Editing pushlished commits</a></h2>
+<h2 id="editing-published-commits"><a class="header" href="#editing-published-commits">Editing published commits</a></h2>
 <p>Make some changes to a file and instead of a new commit, use <code>--amend</code> to edit the last commit.</p>
 <pre><code class="language-sh">echo &quot;print('More content')&quot; &gt;&gt; new_file.py
 git add new_file.py
@@ -457,10 +457,10 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 </code></pre>
 <p>There are two ways to get out of this situation - you either do a <code>git pull --rebase</code> to merge remote changes to your local copy first. Or you can do <code>git push -f</code> to force overwrite remote with your code.</p>
 <p>If you were to do the latter, you will be changing the history of project. Anyone who has a copy of the project and does <code>git pull</code> will get a similar error.</p>
-<p>The above error is a also common error when you made some change on your remote (via web interface) and then you made some commits on your local machine without pulling remote changes first. As I told, <code>git pull --rebase</code> should get you out of the fix in most cases.</p>
+<p>The above error is also a common error when you made some change on your remote (via web interface) and then you made some commits on your local machine without pulling remote changes first. As I told, <code>git pull --rebase</code> should get you out of the fix in most cases.</p>
 <p>Keep in mind, editing published commits is not recommended, and you should do this only when necessary.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="working-with-branches"><a class="header" href="#working-with-branches">Working with Branches</a></h1>
-<p>Git provides the ability to create branches so as to let developers work on new features or bugfix without disturbing the main code. Changes you make to a branch are stored separately from the other branches. You can switch between branches anytime. When you think you have made enough changes to a branch and the changes are working, you can merge the branch into your <code>main</code> branch.</p>
+<p>Git provides the ability to create branches to let developers work on new features or bug fix without disturbing the main code. Changes you make to a branch are stored separately from the other branches. You can switch between branches anytime. When you think you have made enough changes to a branch and the changes are working, you can merge the branch into your <code>main</code> branch.</p>
 <h2 id="listing-branches"><a class="header" href="#listing-branches">Listing branches</a></h2>
 <p><code>git branch</code> will show you your local branches, and adding the <code>-a</code> flag will also list remote branches.</p>
 <pre><code class="language-sh">[snehit@wired my-project]$ git branch
@@ -469,7 +469,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 * main
   remotes/origin/main
 </code></pre>
-<p>The branch marked with an aesterix denotes the currently active branch. Any changes or commits you make are added on the currently active branch.</p>
+<p>The branch marked with an asterisk denotes the currently active branch. Any changes or commits you make are added on the currently active branch.</p>
 <h2 id="creating-and-switching-branches"><a class="header" href="#creating-and-switching-branches">Creating and switching branches</a></h2>
 <p><code>git branch &lt;name&gt;</code> creates a new branch. <code>git checkout &lt;name&gt;</code> will switch to the new branch so that further changes are make to the new branch.</p>
 <pre><code class="language-sh">git branch add-emotes
@@ -495,11 +495,11 @@ f15f7dc (HEAD -&gt; bugfix, origin/main, main, add-emotes) Update test.py
 <h2 id="working-on-branches---merging-and-stash"><a class="header" href="#working-on-branches---merging-and-stash">Working on branches - merging and stash</a></h2>
 <p>You usually create a branch to work on bug or feature without disturbing the actual code. The benefit here is that if there are any urgent changes required to the main code, you can make commits on main without needing to halt working on bug or feature.</p>
 <p>There are usually three situations.</p>
-<h3 id="fast-forward-merge"><a class="header" href="#fast-forward-merge">Fast forward merge</a></h3>
+<h3 id="fast-forward-merge"><a class="header" href="#fast-forward-merge">Fast-forward merge</a></h3>
 <p>First checkout the newly created <code>add-emotes</code> branch.</p>
 <pre><code class="language-sh">git checkout add-emotes
 </code></pre>
-<p>Lets make some changes now.</p>
+<p>Let's make some changes now.</p>
 <pre><code class="language-sh">echo &quot;print(':-)')&quot; &gt;&gt; emotes.py
 git add emotes.py
 git commit -m &quot;Add emotes&quot;
@@ -516,7 +516,7 @@ Fast-forward
 </code></pre>
 <p>Notice the phrase <code>Fast-forward</code>. It signifies that no commits were made on main from the time of creating branch <code>add-emotes</code> and the time when we merged it. Git could just &quot;fast-forward&quot; the <code>main</code> branch with commits from <code>add-emotes</code>. You ran use <code>git log --oneline</code> to verify that the commit was indeed applied on <code>main</code> branch too.</p>
 <h3 id="recursive-merge"><a class="header" href="#recursive-merge">Recursive merge</a></h3>
-<p>Lets do this process again, but we will make a commit on <code>main</code> before merging. Again, checkout <code>add-emotes</code> and make some changes.</p>
+<p>Let's do this process again, but we will make a commit on <code>main</code> before merging. Again, checkout <code>add-emotes</code> and make some changes.</p>
 <pre><code class="language-sh">git checkout add-emotes
 echo &quot;print(':/')&quot; &gt;&gt; emotes.py
 </code></pre>
@@ -536,7 +536,7 @@ echo &quot;print('B-)')&quot; &gt;&gt; emotes.py
 git add emotes.py
 git commit -S -m &quot;Add more emotes&quot;
 </code></pre>
-<p>Now, lets switch back to <code>main</code> branch and try merging <code>add-emotes</code>.</p>
+<p>Now, let's switch back to <code>main</code> branch and try merging <code>add-emotes</code>.</p>
 <pre><code class="language-sh">git checkout main
 git merge add-emotes
 </code></pre>
@@ -548,7 +548,7 @@ git merge add-emotes
 # Lines starting with '#' will be ignored, and an empty message aborts
 # the commit.
 </code></pre>
-<p>This is very much like making a commit. This time, there was already a commit made on to <code>main</code> before we merged the branch. So, git cannot simply fast forward. Save this file and exit. You should get this message.</p>
+<p>This is very much like making a commit. There was already a commit made on to <code>main</code> before we merged the branch. So, git cannot simply fast-forward. Save this file and exit. You should get this message.</p>
 <pre><code>Merge made by the 'recursive' strategy.
  emotes.py | 2 ++
  1 file changed, 2 insertions(+)
@@ -569,15 +569,15 @@ git commit -m &quot;Make program fancy&quot;
 <p>First checkout <code>main</code> branch.</p>
 <pre><code class="language-sh">git checkout main
 </code></pre>
-<p>Lets now merge it and see what happens.</p>
+<p>Let's now merge it and see what happens.</p>
 <pre><code class="language-sh">[snehit@wired my-project]$ git merge add-emotes
 Auto-merging test.py
 CONFLICT (content): Merge conflict in test.py
 Automatic merge failed; fix conflicts and then commit the result.
 </code></pre>
 <p>Git bailed out saying it cannot merge - as we expected.</p>
-<p>When you get a merge conflict, you shouln't need to panic. Its not an &quot;error&quot;. It only indicates that git is unable to decide which copy of the code to keep, because the two branches have different changes for the same file location.</p>
-<p>Git is telling us that there is a conflict in <code>test.py</code>. Lets open that file and see what's there.</p>
+<p>When you get a merge conflict, you shouldn't need to panic. It's not an &quot;error&quot;. It only indicates that git is unable to decide which copy of the code to keep, because the two branches have different changes for the same file location.</p>
+<p>Git is telling us that there is a conflict in <code>test.py</code>. Let's open that file and see what's there.</p>
 <pre><code>print('Hello World')
 print('Another line')
 
@@ -589,8 +589,8 @@ print('added via main')
 print('added via add-emotes')
 &gt;&gt;&gt;&gt;&gt;&gt;&gt; add-emotes
 </code></pre>
-<p>Here, you can see the conflicting part between angled brackets. From <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> to <code>=======</code> are the contents that are in <code>main</code>. From <code>=======</code> to <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; add-emotes</code> are the contents that are in <code>add-emotes</code>. you can freely remove one of them, along with the angled brackets and equal signs. You may also just remove the brackets and equal signs in case you want to keep changes from both branches. Finally, you may remove it to add some other code altogether. Its all up to you.</p>
-<p>Lets say, I remove the code from <code>main</code>. So my file should now look like this.</p>
+<p>Here, you can see the conflicting part between angled brackets. From <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> to <code>=======</code> are the contents that are in <code>main</code>. From <code>=======</code> to <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; add-emotes</code> are the contents that are in <code>add-emotes</code>. You can freely remove one of them, along with the angled brackets and equal signs. You may also just remove the brackets and equal signs in case you want to keep changes from both branches. Finally, you may remove it to add some other code altogether. It's all up to you.</p>
+<p>Let's say, I remove the code from <code>main</code>. So my file should now look like this.</p>
 <pre><code>print('Hello World')
 print('Another line')
 
@@ -604,16 +604,16 @@ git commit -m &quot;Merge add-emotes into main&quot;
 </code></pre>
 <p>This will create the merge commit.</p>
 <h2 id="deleting-branches"><a class="header" href="#deleting-branches">Deleting branches</a></h2>
-<p>You may want to delete a branch if you have merged it into <code>main</code> and it is no longer needed. Or maybe you decided against incorporating the changes from that branch. In these cases, you can delete the branch.</p>
+<p>You may want to delete a branch if you have merged it into <code>main</code>, and it is no longer needed. Or maybe you decided against incorporating the changes from that branch. In these cases, you can delete the branch.</p>
 <pre><code class="language-sh">git branch -d &lt;name&gt;
 </code></pre>
 <p>If you had published a branch you now want to delete, run this command</p>
 <pre><code class="language-sh">git push origin --delete &lt;branch name&gt;
 </code></pre>
-<p>Run these commands with care, as you may accidently delete one of the important branches.</p>
+<p>Run these commands with care, as you may accidentally delete one of the important branches.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="beyond-the-book"><a class="header" href="#beyond-the-book">Beyond the book</a></h1>
 <h2 id="general-development-workflow"><a class="header" href="#general-development-workflow">General development workflow</a></h2>
-<p>I'll briefly tell the workflow you follow when contributing to someone else's repo. You first fork the repository to your account. You clone your fork with <code>git clone &lt;link&gt;</code>. You will then create a new branch which shall hold the commits you make. You can also directly make commits on <code>main</code>, but this is almost <strong>never</strong> recommended.</p>
+<p>I'll briefly tell the workflow you follow when contributing to someone else's repo. You first fork the repository to your account. You clone your fork with <code>git clone &lt;link&gt;</code>. Likewise, you will then create a new branch which shall hold the commits you make. Furthermore, you can also directly make commits on <code>main</code>, but this is almost <strong>never</strong> recommended.</p>
 <p>You make some changes then commit it. When you think you have made all the changes you wanted, you push the branch to remote on your repo, using <code>git push -u origin &lt;branch name&gt;</code>. On GitHub, you finally create a pull request from your branch to the <code>main</code> or <code>dev</code> branch of original repo.</p>
 <p>Maintainers will often have a separate <code>dev</code> branch. This can be for various reasons - the simplest one being that they don't want everyone to be using the latest changes by default as it can be buggy and unstable. Those who want to test new features can manually switch to dev branch and use. Once features from dev branch are tested, it is finally merged into <code>main</code>.</p>
 <p>If available, read the <code>CONTRIBUTING.md</code> file on the original repo.</p>
