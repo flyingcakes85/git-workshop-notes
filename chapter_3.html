@@ -10,7 +10,7 @@
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
+        <meta name="description" content="Handout notes for attendees during my workshops on Git">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -117,7 +117,13 @@
                                                 <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                                                                        
+                                                                        <a href="https://github.com/flyingcakes85/git-workshop-notes" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                                                                        <a href="https://github.com/flyingcakes85/git-workshop-notes/edit/main/chapters/chapter_3.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                        
                     </div>
                 </div>
 
@@ -209,7 +215,7 @@ origin	https://github.com/flyingcakes85/my-project.git (push)
 </code></pre>
 <p>Often, the repository you want to download is large, and downloading it can take some time. To get around this, you can use <code>--depth=N</code> flag to fetch only the past <code>N</code> commits. You will have all files from the repository, but you won't have complete commit history.</p>
 <h2 id="editing-pushlished-commits"><a class="header" href="#editing-pushlished-commits">Editing pushlished commits</a></h2>
-<p>Make some changes to a file an instead of a new commit, use <code>--amend</code> to edit the last commit.</p>
+<p>Make some changes to a file and instead of a new commit, use <code>--amend</code> to edit the last commit.</p>
 <pre><code class="language-sh">echo &quot;print('More content')&quot; &gt;&gt; new_file.py
 git add new_file.py
 git commit --amend
