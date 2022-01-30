@@ -10,7 +10,8 @@ The book still remained closed source though. Very recently, I realised that a b
 
 ## Building this book
 
-Install `pandoc`. Then run
+- Make sure you have `makecmds` installed via `cpan` or `tlmgr`
+- Install `pandoc`. Then run
 
 ```
 make pdf
