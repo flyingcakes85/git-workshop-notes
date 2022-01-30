@@ -12,3 +12,7 @@ This book is open source at [flyingcakes/git-workshop-notes](https://github.com/
 This book was originally a simple text file I wrote for myself when hosting sessions. I kept adding bits and pieces until it grew larger than what I'd personally call "speaker notes". I decided I should share these notes with the attendees. Using pandoc, I generated a pdf and shared it.
 
 The book still remained closed source though. Very recently, I realised that a book about Git that I wrote, being closed source doesn't make sense. So I rearranged it, and published to GitHub under the MIT license. The repo contains everything you need to generate a pdf on your system.
+
+## PDF Download
+
+The latest version of the book is available at [files.snehit.dev/Git_Workshop_Notes.pdf](https://files.snehit.dev/Git_Workshop_Notes.pdf).
