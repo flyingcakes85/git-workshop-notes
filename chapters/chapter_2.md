@@ -157,7 +157,7 @@ This should land you in a text editor, usually vi(m), where you add commit title
 #
 ```
 
-The is giving the output you saw with `git status` one more time, so that you can be sure that you are committing all the files you want. On the first line, give a commit title. Leave a blank line, and from the third line, you can write the description.
+You get the output you saw with `git status` one more time, so that you can be sure that you are committing all the files you want. On the first line, give a commit title. Leave a blank line, and from the third line, you can write the description.
 
 Here is an example. Note that I did not remove the lines that were already there. They are starting with a '#' and git will ignore them.
 
