@@ -17,7 +17,7 @@ git --version
 This should output the version name. An example output, on my system:
 
 ```
-git version 2.33.0
+git version 2.39.0
 ```
 
 I'm starting with shell commands now. Git commands should work on all systems, but other commands like `echo` will probably work only on \*nix based systems. May also in Git Bash on Windows.
